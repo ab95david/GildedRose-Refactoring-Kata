@@ -12,4 +12,10 @@ describe("Aged Brie", function() {
     expect(items[0].quality).toEqual(3);
   });
 
+  it("La 'calidad' de un articulo nunca es mayor a '50'", function() {
+    const gilgedRose = new Shop([ new Item("Aged Brie", 2, 50) ]);
+    const items = gilgedRose.updateQuality();
+    expect(items[0].quality).toEqual(50);
+  });
+
 });
